@@ -4,8 +4,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
+
 export default function App() {
-  const [digits, setDigits] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const initialDigits = Array.from({ length: 10 }, (_, i) => i);
+  const [digits, setDigits] = useState(initialDigits);
   const [draggedIndex, setDraggedIndex] = useState(null);
   const [dragOverIndex, setDragOverIndex] = useState(null);
 
@@ -94,9 +96,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     minHeight: '100vh',
+    width: '100vw',
     backgroundColor: '#f3f4f6',
     fontFamily: 'system-ui, -apple-system, sans-serif',
     padding: '16px',
+    boxSizing: 'border-box',
   },
   card: {
     backgroundColor: '#ffffff',
@@ -163,5 +167,4 @@ const styles = {
     margin: 0,
   },
 };
-
 
