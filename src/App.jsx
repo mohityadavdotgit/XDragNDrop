@@ -15,7 +15,7 @@ export default function App() {
   };
 
   const handleDragOver = (e, index) => {
-    e.preventDefault(); // Required to allow dropping
+    e.preventDefault();
     if (index !== dragOverIndex) {
       setDragOverIndex(index);
     }
@@ -30,9 +30,7 @@ export default function App() {
     }
 
     const updatedDigits = [...digits];
-    // Remove dragged item from original index
     const [movedItem] = updatedDigits.splice(draggedIndex, 1);
-    // Insert it directly at the target drop index (shifts elements rather than swapping)
     updatedDigits.splice(dropIndex, 0, movedItem);
 
     setDigits(updatedDigits);
@@ -165,3 +163,5 @@ const styles = {
     margin: 0,
   },
 };
+
+
